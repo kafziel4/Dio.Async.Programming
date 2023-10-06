@@ -8,7 +8,10 @@ public class Pessoa
 
     public void IncrementarIdade()
     {
-        Idade++;
+        lock (this)
+        {
+            Idade++;
+        }
     }
 
     public override string ToString()

@@ -14,10 +14,20 @@ public class InteragindoComBanco
 
     public void LerDoBanco()
     {
+        var pessoas = _appDbContext.Pessoas.ToList();
+        foreach (var item in pessoas)
+        {
+            Console.WriteLine(item);
+        }
     }
 
     public async Task LerDoBancoAsync()
     {
+        var pessoas = await _appDbContext.Pessoas.ToListAsync();
+        foreach (var item in pessoas)
+        {
+            Console.WriteLine(item);
+        }
     }
 }
 
